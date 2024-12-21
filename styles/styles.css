@@ -45,20 +45,40 @@ nav {
 
 /* Hero section styles */
 .hero {
-    background-image: url('/images/output-onlinepngtools.png');
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 60px);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    color: #426c60;
+    color: #000;
     text-align: center;
 }
 
+.hero-image {
+    background-image: url('../images/herosec.jpg');
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .hero-content {
-    max-width: 800px;
-    margin: 0 20px;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
   }
   
   .hero h1 {
