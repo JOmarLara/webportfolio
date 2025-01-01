@@ -116,4 +116,28 @@ function validateForm() {
     // Your form validation logic here
 }
 
-// Any other existing JavaScript...
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuIcon.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('show');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('nav')) {
+            navLinks.classList.remove('show');
+        }
+    });
+});
+
+// ... rest of your existing JavaScript

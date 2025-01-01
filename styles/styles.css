@@ -112,6 +112,12 @@ section h2 {
   align-items: center;
 }
 
+.about-me h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
 .about-content {
   display: flex;
   align-items: center;
@@ -119,8 +125,8 @@ section h2 {
 }
 
 .about-content img {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border: 10px solid #000;
   margin-right: 20px;
@@ -196,7 +202,8 @@ footer {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .social-links a {
@@ -274,4 +281,137 @@ body.fade-out {
 .page-transition.active {
   opacity: 1;
   pointer-events: all;
+}
+
+.skill-chart {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-chart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  width: calc(100% - 130px);
+  vertical-align: middle;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 10px;
+}
+
+/* Radial Chart Styles */
+.expertise-chart {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expertise-chart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radial-chart {
+  width: 200px;
+  height: 200px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+      stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart .circle.ai { stroke: #FF9F1C; }
+.circular-chart .circle.ml { stroke: #2EC4B6; }
+.circular-chart .circle.data { stroke: #E71D36; }
+.circular-chart .circle.ethics { stroke: #011627; }
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.color-box.ai { background-color: #FF9F1C; }
+.color-box.ml { background-color: #2EC4B6; }
+.color-box.data { background-color: #E71D36; }
+.color-box.ethics { background-color: #011627; }
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-chart, .expertise-chart {
+  flex: 1;
+  min-width: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .charts-container {
+    flex-direction: column;
+  }
 }
