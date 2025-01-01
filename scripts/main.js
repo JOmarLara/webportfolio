@@ -78,26 +78,32 @@ function isValidEmail(email) {
 
 // Page Transition
 document.addEventListener('DOMContentLoaded', function() {
-    const transitionElement = document.createElement('div');
-    transitionElement.classList.add('page-transition');
-    document.body.appendChild(transitionElement);
+    const transitionElement = document.querySelector('.page-transition') || document.createElement('div');
+    if (!document.querySelector('.page-transition')) {
+        transitionElement.classList.add('page-transition');
+        document.body.appendChild(transitionElement);
+    }
+
+    function startPageTransition(targetHref) {
+        document.body.classList.add('fade-out');
+        transitionElement.classList.add('active');
+
+        setTimeout(() => {
+            window.location.href = targetHref;
+        }, 500);
+    }
 
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (this.hostname === window.location.hostname) {
+            if (this.hostname === window.location.hostname && !this.hash) {
                 e.preventDefault();
                 const targetHref = this.getAttribute('href');
-
-                document.body.classList.add('fade-out');
-                transitionElement.classList.add('active');
-
-                setTimeout(() => {
-                    window.location.href = targetHref;
-                }, 500);
+                startPageTransition(targetHref);
             }
         });
     });
 
+    // Handle browser back/forward buttons
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             document.body.classList.remove('fade-out');
@@ -105,9 +111,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Initial page load
+    if (performance.navigation.type === performance.navigation.TYPE_NAVIGATE) {
+        document.body.classList.add('fade-out');
+        transitionElement.classList.add('active');
+    }
+
     window.addEventListener('load', function() {
-        document.body.classList.remove('fade-out');
-        transitionElement.classList.remove('active');
+        setTimeout(() => {
+            document.body.classList.remove('fade-out');
+            transitionElement.classList.remove('active');
+        }, 50);
     });
 });
 
