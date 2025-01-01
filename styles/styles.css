@@ -58,6 +58,11 @@ nav {
   text-align: center;
 }
 
+.hero img {
+  max-width: 100%;
+  height: auto;
+}
+
 .hero h1 {
   font-size: 72px;
   margin-bottom: 20px;
@@ -102,12 +107,15 @@ section h2 {
 /* About Me */
 .about-me {
   background-color: #fff;
+  padding: 60px 20px;
+  padding-bottom: 162px;
+  align-items: center;
 }
 
 .about-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .about-content img {
@@ -115,6 +123,7 @@ section h2 {
   height: 300px;
   object-fit: cover;
   border: 10px solid #000;
+  margin-right: 20px;
 }
 
 .about-content p {
