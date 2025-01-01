@@ -1,34 +1,60 @@
-<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-widht, initial-scale=1.0">
-    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Omar Lara - AI Engineer and Data Scientist. Get in touch for collaborations or inquiries.">
+    <title>Contact | Omar Lara</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Contact Omar Lara | AI Engineer & Data Scientist">
+    <meta property="og:description" content="Get in touch with Omar Lara for AI and data science collaborations or inquiries.">
+    <meta property="og:image" content="https://github.com/JOmarLara/images/og-image.jpg">
+    <meta property="og:url" content="https://github.com/JOmarLara/contact.html">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">Omar Lara</div>
-        <ul class="nav-links">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About Me</a></li>
-            <li><a href="./projects.html">Projects</a></li>
-            <!-- <li><a href="./blog.html" target="_blank"></a>Blog</li> --><!-- Uncomment when the blog is ready -->
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-     </nav>
-        <!-- Contact Section -->
-         <section class="contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me via email or through the form below.</p>
-            <form action="mailto:jesusolara@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your name" required>
-                <input type="email" name="email" placeholder="Your email" required>
-                <textarea name="comment" placeholder="Your message" required></textarea>
-                <input type="submit" value="Send Message">
+    <header>
+        <nav aria-label="Main Navigation">
+            <div class="logo">Omar Lara</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="./index.html" role="menuitem">Home</a></li>
+                <li role="none"><a href="./about.html" role="menuitem">About Me</a></li>
+                <li role="none"><a href="./projects.html" role="menuitem">Projects</a></li>
+                <li role="none"><a href="./contact.html" role="menuitem" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out to me via email or through the form below. I'll get back to you as soon as possible.</p>
+            <form action="https://formspree.io/f/your-formspree-endpoint" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
             </form>
-         </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Omar Lara. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/JOmarLara" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/jesus-omar-lara" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

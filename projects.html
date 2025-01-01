@@ -1,41 +1,77 @@
-<!-- projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-widht, initial-scale=1.0">
-  <title>Projects | Your Name</title>
-  <link rel="stylesheet" href="styles/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Omar Lara's projects in AI, data science, and innovative technology solutions.">
+    <title>Projects | Omar Lara - AI Engineer & Data Scientist</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Projects | Omar Lara - AI Engineer & Data Scientist">
+    <meta property="og:description" content="Discover innovative projects in AI and data science by Omar Lara.">
+    <meta property="og:image" content="https://github.com/JOmarLara/images/og-image.jpg">
+    <meta property="og:url" content="https://github.com/JOmarLara/projects.html">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="logo">Omar Lara</div>
-    <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About Me</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <!-- <li><a href="./blog.html" target="_blank"></a>Blog</li> --><!-- Uncomment when the blog is ready -->
-        <li><a href="./contact.html">Contact</a></li>
-    </ul>
- </nav>
+    <header>
+        <nav aria-label="Main Navigation">
+            <div class="logo">Omar Lara</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="./index.html" role="menuitem">Home</a></li>
+                <li role="none"><a href="./about.html" role="menuitem">About Me</a></li>
+                <li role="none"><a href="./projects.html" role="menuitem" aria-current="page">Projects</a></li>
+                <li role="none"><a href="./contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Projects Section -->
-  <section class="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-      <!-- Project Card 1 -->
-      <div class="card">
-        <img src="images/bookbot.png" alt="Output for bookbot project">
-        <h3><b>Bookbot:</b> Text Analysis Toolkit</h3>
-        <p>This tool reads a text file (e.g., a classic novel like Frankenstein) 
-          and analyzes its content to produce a comprehensive report. 
-          It is an excellent starting point for anyone interested in text analysis, 
-          data visualization, or building practical Python applications.</p>
-        <a href="https://github.com/JOmarLara/bookbot" class="btn">View on GitHub</a>
-      </div>
-      <!-- Repeat for other projects -->
-    </div>
-  </section>
+    <main>
+        <section class="projects">
+            <h1>My Projects</h1>
+            <div class="project-cards">
+                <!-- Project Card 1 -->
+                <article class="card">
+                    <img src="images/bookbot.png" alt="Output for Bookbot project" loading="lazy">
+                    <h2>Bookbot: Text Analysis Toolkit</h2>
+                    <p>This tool reads a text file (e.g., a classic novel like Frankenstein) 
+                    and analyzes its content to produce a comprehensive report. 
+                    It's an excellent starting point for anyone interested in text analysis, 
+                    data visualization, or building practical Python applications.</p>
+                    <a href="https://github.com/JOmarLara/bookbot" class="btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="card">
+                    <img src="images/project2.jpg" alt="Project 2 thumbnail" loading="lazy">
+                    <h2>AI-Driven Data Analysis Platform</h2>
+                    <p>An innovative platform that leverages machine learning algorithms to analyze large datasets, 
+                    providing actionable insights for businesses. This project showcases advanced data processing 
+                    techniques and intuitive data visualization.</p>
+                    <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Learn More</a>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="card">
+                    <img src="images/project3.jpg" alt="Project 3 thumbnail" loading="lazy">
+                    <h2>Ethical AI Framework</h2>
+                    <p>A comprehensive framework for developing and implementing ethical AI systems. 
+                    This project addresses key concerns in AI ethics, including bias mitigation, 
+                    transparency, and accountability in machine learning models.</p>
+                    <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Explore Project</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Omar Lara. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/JOmarLara" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
