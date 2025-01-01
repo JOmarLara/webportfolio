@@ -1,3 +1,57 @@
+# Portfolio Web Template
+
+## Overview
+
+This project is a customizable web portfolio template designed for AI Engineers, Data Scientists, and Innovators. It features a clean, modern design with smooth page transitions and responsive layouts.
+
+## Table of Contents
+
+- [Portfolio Web Template](#portfolio-web-template)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Project Structure](#project-structure)
+  - [Setup and Installation](#setup-and-installation)
+  - [Customization](#customization)
+    - [Updating Content](#updating-content)
+    - [Modifying Styles](#modifying-styles)
+    - [Customizing JavaScript](#customizing-javascript)
+  - [Features](#features)
+  - [Dependencies](#dependencies)
+  - [Browser Compatibility](#browser-compatibility)
+  - [Known Issues](#known-issues)
+  - [Contributing](#contributing)
+
+## Project Structure
+
+portfolioweb/
+│
+├── images/
+│   ├── bookbot.png
+│   ├── f.png
+│   ├── herosec.jpg
+│   └── output-onlinepngtools.png
+│
+├── scripts/
+│   └── main.js
+│
+├── styles/
+│   └── styles.css
+│
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+└── README.md
+
+## Setup and Installation
+
+1. Clone the repository:
+   
+    `git clone https://github.com/yourusername/portfolioweb.git`
+
+2. Navigate to the project directory:
+   
+   `cd portfolioweb`
 
 3. Open `index.html` in your browser to view the site locally.
 
