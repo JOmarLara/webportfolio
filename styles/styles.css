@@ -106,19 +106,21 @@ section h2 {
 
 /* About Me */
 .about-me {
-  background-color: #fff;
+  background-color: #000;
   padding: 60px 20px;
   padding-bottom: 162px;
   align-items: center;
 }
 
 .about-me h1 {
+  color: #fff;
   font-size: 48px;
   margin-bottom: 40px;
   text-align: center;
 }
 
 .about-content {
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -148,13 +150,6 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-}
-
-.card {
-  background-color: #fff;
-  color: #000;
-  padding: 20px;
-  border: 5px solid #ffd700;
 }
 
 .card img {
@@ -193,22 +188,10 @@ section h2 {
   padding-bottom: 10px;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 3px solid #000;
-  font-family: 'Courier New', monospace;
 }
 
 /* Footer */
@@ -255,6 +238,7 @@ footer {
   }
 }
 
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -299,6 +283,116 @@ body.fade-out {
   pointer-events: all;
 }
 
+/* New Brutalist/Futurist Enhancements */
+
+/* Add a diagonal stripe pattern to the background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #e0e0e0 10px,
+    #e0e0e0 20px
+  );
+  z-index: -1;
+}
+
+/* Add angular shapes to section headers */
+section h2::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  transform: rotate(45deg);
+  margin-right: 15px;
+}
+
+/* Add a futuristic border to project cards */
+.card {
+  border: 5px solid #ffd700;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #ffd700, transparent, #ffd700);
+  z-index: -1;
+  animation: border-glow 3s infinite linear;
+}
+
+@keyframes border-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add a circuit board pattern to the footer */
+footer {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" stroke="%23ffd700" stroke-width="2" x="10" y="10" width="80" height="80"/><line x1="10" y1="50" x2="90" y2="50" stroke="%23ffd700" stroke-width="2"/><line x1="50" y1="10" x2="50" y2="90" stroke="%23ffd700" stroke-width="2"/></svg>');
+  background-size: auto, 100px 100px;
+}
+
+/* Enhance form inputs with a futuristic look */
+.form-group input,
+.form-group textarea {
+  border: 3px solid #000;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px;
+  width: 50%;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background-color: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+/* Add a dynamic hover effect to navigation links */
+.nav-links a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffd700;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
 .skill-chart {
   margin-top: 40px;
   max-width: 600px;
@@ -307,6 +401,7 @@ body.fade-out {
 }
 
 .skill-chart h2 {
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -316,6 +411,7 @@ body.fade-out {
 }
 
 .skill-name {
+  color: #fff;
   display: inline-block;
   width: 120px;
   font-weight: bold;
@@ -346,6 +442,7 @@ body.fade-out {
 }
 
 .expertise-chart h2 {
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -393,6 +490,7 @@ body.fade-out {
 .circular-chart .circle.ethics { stroke: #011627; }
 
 .chart-legend {
+  color: #fff;
   display: flex;
   flex-direction: column;
   gap: 10px;

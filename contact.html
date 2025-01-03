@@ -6,6 +6,7 @@
     <meta name="description" content="Contact Omar Lara - AI Engineer and Data Scientist. Get in touch for collaborations or inquiries.">
     <title>Contact | Omar Lara</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js"></script>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Contact Omar Lara | AI Engineer & Data Scientist">
     <meta property="og:description" content="Get in touch with Omar Lara for AI and data science collaborations or inquiries.">
@@ -26,8 +27,8 @@
     </header>
 
     <main>
-        <section class="contact">
-            <h1>Contact Me</h1>
+        <section class="hero">
+            <h1 data-text="Contact Me">Contact Me</h1>
             <p>Feel free to reach out to me for collaborations, inquiries, or just to say hello!</p>
             <form id="contact-form">
                 <div class="form-group">
@@ -60,74 +61,67 @@
             <a href="https://www.linkedin.com/in/jesus-omar-lara" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
     </footer>
-
-    <script src="scripts/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
-            const formSuccess = document.getElementById('form-success');
+        const form = document.querySelector('form');
 
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (validateForm()) {
-                    // Simulate form submission (replace with actual form submission logic)
-                    setTimeout(() => {
-                        form.style.display = 'none';
-                        formSuccess.classList.remove('hidden');
-                    }, 1000);
-                }
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showGlitchyPopup();
+        });
+
+        function showGlitchyPopup() {
+            const popup = document.createElement('div');
+            popup.className = 'glitchy-popup';
+
+            const message = document.createElement('div');
+            message.className = 'glitchy-text';
+            message.innerHTML = 'MESSAGE RECEIVED!<br>GOOD LUCK WAITING FOR A RESPONSE.';
+
+            const button1 = createGlitchyButton('OK');
+            const button2 = createGlitchyButton('CANCEL');
+
+            popup.appendChild(message);
+            popup.appendChild(button1);
+            popup.appendChild(button2);
+
+            document.body.appendChild(popup);
+
+            setTimeout(() => {
+            popup.style.display = 'block';
+            }, 100);
+
+            setTimeout(() => {
+            document.body.removeChild(popup);
+            }, 5000);
+        }
+
+        function createGlitchyButton(text) {
+            const button = document.createElement('button');
+            button.className = 'glitchy-button';
+            button.textContent = text;
+
+            button.addEventListener('mouseover', function() {
+            const randomX = Math.random() * 20 - 10;
+            const randomY = Math.random() * 20 - 10;
+            this.style.transform = `translate(${randomX}px, ${randomY}px)`;
             });
 
-            function validateForm() {
-                let isValid = true;
-                const name = document.getElementById('name');
-                const email = document.getElementById('email');
-                const message = document.getElementById('message');
+            button.addEventListener('mouseout', function() {
+            this.style.transform = 'translate(0, 0)';
+            });
 
-                if (name.value.trim() === '') {
-                    showError('name-error', 'Name is required');
-                    isValid = false;
-                } else {
-                    hideError('name-error');
-                }
+            button.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+            });
 
-                if (email.value.trim() === '') {
-                    showError('email-error', 'Email is required');
-                    isValid = false;
-                } else if (!isValidEmail(email.value)) {
-                    showError('email-error', 'Please enter a valid email address');
-                    isValid = false;
-                } else {
-                    hideError('email-error');
-                }
-
-                if (message.value.trim() === '') {
-                    showError('message-error', 'Message is required');
-                    isValid = false;
-                } else {
-                    hideError('message-error');
-                }
-
-                return isValid;
-            }
-
-            function showError(id, message) {
-                const errorElement = document.getElementById(id);
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-            }
-
-            function hideError(id) {
-                const errorElement = document.getElementById(id);
-                errorElement.textContent = '';
-                errorElement.style.display = 'none';
-            }
-
-            function isValidEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
+            return button;
+        }
         });
-    </script>
+            </script>
 </body>
 </html>
